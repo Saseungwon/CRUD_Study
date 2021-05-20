@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.student.dao.IStudentDao">
+<!-- mapping이 IStudentDao랑 돼서 
+	StudentServiceImpl에서 실행한
+	'studentDao.~~메소드' 는 이 xml에서 실행되는 거다. 
+ -->
+
+<select id="getStudentList" resultType="com.study.student.vo.StudentVO">
+
+	select std_no, std_name, std_sex,
+			to_char(std_birth, 'YYYY-MM-DD') AS std_birth	
+	from student
+</select>
+
+
+
+
+</mapper>
